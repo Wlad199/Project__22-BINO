@@ -22,14 +22,48 @@
 // button ====================================================================================================//
 
 .button {
+	display: inline-flex;
+	background-color: #000;
+	border-radius: 5px;
+	padding: 10px 20px;
+	@include adaptiveValue("padding-top", 14, 10, 1170, 767, 1);
+	@include adaptiveValue("padding-bottom", 14, 10, 1170, 767, 1);
+	@include adaptiveValue("padding-right", 20, 15, 1170, 767, 1);
+	@include adaptiveValue("padding-left", 20, 15, 1170, 767, 1);
+
+	&__text {
+		font-weight: 600;
+		color: #FFFFFF;
+		@include adaptiveValue("font-size", 16, 14);
+	}
+
+	&__icon {
+		margin: 0px 0px 0px 14px;
+		transition: all 0.3s ease 0s;
+	}
+	transition: all 0.3s ease 0s;
+	&:hover {
+		box-shadow: 1px 4px 18px 1px rgba(0, 0, 0, 0.4);
+		.button__icon {
+			transform: rotate(45deg);
+		}
+		.button__text {
+			color: #d8d8d8;
+		}
+	}
+}
+
+// button_t ====================================================================================================//
+
+.button_t {
 	background-color: #000;
 	border-radius: 5px;
 	color: #fff;
 	@include adaptiveValue("font-size", 16, 14, 1170, 767, 1);
 	font-weight: 600;
 	padding: 10px 20px;
-	@include adaptiveValue("padding-top", 10, 5, 1170, 767, 1);
-	@include adaptiveValue("padding-bottom", 10, 5, 1170, 767, 1);
+	@include adaptiveValue("padding-top", 15, 10, 1170, 767, 1);
+	@include adaptiveValue("padding-bottom", 15, 10, 1170, 767, 1);
 	@include adaptiveValue("padding-right", 20, 15, 1170, 767, 1);
 	@include adaptiveValue("padding-left", 20, 15, 1170, 767, 1);
 	transition: all 0.3s ease 0s;
@@ -37,4 +71,13 @@
 		color: #d8d8d8;
 		box-shadow: 0px 4px 18px 1px rgba(0, 0, 0, 0.2);
 	}
+}
+
+// text ====================================================================================================//
+
+.text {
+	font-family: $jac;
+	font-size: 16px;
+	line-height: 140%;
+	color: #333333;
 }

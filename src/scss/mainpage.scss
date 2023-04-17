@@ -2,61 +2,110 @@
 // page ====================================================================================================//
 
 .page {
-	padding: 150px 0px 0px 0px;
+	padding: 150px 0px 200px 0px;
 	@include adaptiveValue("padding-top", 150, 90, 1170, 767, 1);
 }
 .agency {
 
-		&__container {
+	&__container {
+	}
+	&__top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__image {
+		img {
+			max-width: 100%;
 		}
-
-		&__body {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
+	}
+	&__decore {
+		padding: 0px 130px 0px 0px;
+		@include adaptiveValue("padding-right", 130, 50, 1170, 767, 1);
+		@media (max-width: 767px) {
+			display: none;
 		}
-
-		&__image {
-			img {
-				max-width: 100%;
+	}
+	&__title {
+		margin: -65px auto 0 auto;
+		font-weight: 600;
+		font-size: 65px;
+		@include adaptiveValue("font-size", 65, 34, 1170, 500, 1);
+		text-align: center;
+		max-width: 700px;
+		line-height: 120%;
+		@include adaptiveValue("padding-left", 0, 300, 1170, 767, 1);
+		@media (max-width: 767px) {
+			margin: 0 auto;
+			padding: 50px 0px 0px 0px;
+			@include adaptiveValue("padding-top", 50, 30, 767, 320, 1);
+			max-width: 500px;
+			position: relative;
+			@media (min-width: 540px) {
+				&::after {
+				content: '';
+				position: absolute;
+				top: -80px;
+				right: 30px;
+				height: 100%;
+				width: 100%;
+				background: url('@img/agency/icons/icon01.svg')right no-repeat ;
+			}
 			}
 		}
-
-		&__decore {
-			padding: 0px 130px 0px 0px;
-			@include adaptiveValue("padding-right", 130, 50, 1170, 767, 1);
-			@media (max-width: 767px) {
-				display: none;
-			}
-		}
-
-		&__title {
-			margin: -65px auto 0 auto;
-			font-weight: 600;
-			font-size: 65px;
-			@include adaptiveValue("font-size", 65, 34, 1170, 500, 1);
-			text-align: center;
-			max-width: 700px;
-			line-height: 120%;
-			@include adaptiveValue("padding-left", 0, 300, 1170, 767, 1);
-			@media (max-width: 767px) {
-				margin: 0 auto;
-				padding: 50px 0px 0px 0px;
-				@include adaptiveValue("padding-top", 50, 30, 767, 320, 1);
-				max-width: 500px;
-				position: relative;
-				@media (min-width: 540px) {
-					&::after {
-					content: '';
-					position: absolute;
-					top: -80px;
-					right: 30px;
-					height: 100%;
-					width: 100%;
-					background: url('@img/agency/icons/icon01.svg')right no-repeat ;
-				}
-				}
-
-			}
-		}
+	}
 }
+
+.content-agency {
+	@include adaptiveValue("padding-top", 50, 30);
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+
+	&__body {
+		flex: 0 1 50%;
+		@media (max-width: 767px) {
+			flex: 0 1 100%;
+		}
+	}
+
+	&__text {
+		max-width: 470px;
+		@include adaptiveValue("padding-bottom", 40, 30);
+		//padding: 0px 25px 0px 0px;
+		@include adaptiveValue("padding-right", 50, 10, 1170, 320, 1);
+	}
+
+	&__button {
+		@include adaptiveValue("margin-bottom", 50, 30, 767, 320, 1);
+	}
+
+	&__decore {
+		@include adaptiveValue("padding-top", 40, 0, 1170, 1000, 1);
+		@media (max-width: 1000px) {
+			display: none;
+		}
+	}
+
+	&__image {
+		position: relative;
+		flex: 0 1 50%;
+		img {
+			max-width: 100%;
+		}
+		@media (max-width: 767px) {
+			flex: 0 1 90%;
+			@include adaptiveValue("margin-left", 300, 40);
+		}
+	}
+	&__scroll {
+		position: absolute;
+		bottom: 10px;
+		left: -40px;
+		transition: all 0.3s ease 0s;
+		&:hover {
+			transform: translate(0, 20%);
+		}
+	}
+}
+
