@@ -133,7 +133,7 @@ body._lock {
 		transition: all 0.3s ease 0s;
 		&:hover{
 			@media (min-width: 767px) {
-				transform: scale(1.04)
+				transform: scale(1.01)
 			}
 		}
 	}
@@ -243,4 +243,17 @@ body._lock {
 	@media (max-width: 767px) {
 		display: none;
 	}
+}
+
+._header-scroll.header {
+	background-color: rgba(253, 251, 245, 0.9);
+	//@include adaptiveValue("padding-top", 20, 15, 1170, 767, 1);
+	//@include adaptiveValue("padding-bottom", 20, 10, 1170, 767, 1);
+	padding: 10px 0px;
+	&__decore {
+		margin-top: 10px;
+	}
+}
+._header-scroll .header__decor {
+	margin-top: 10px;
 }

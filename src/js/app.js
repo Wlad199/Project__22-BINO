@@ -17,7 +17,7 @@ import * as flsFunctions from "./files/functions.js";
 //===================//
 
 // Функционал добавления классов к хедеру при прокрутке
-// flsScroll.headerScroll();
+ flsScroll.headerScroll();
 //===================//
 
 /* MW (3.106) Добавление класса touch для HTML если браузер мобильный */
