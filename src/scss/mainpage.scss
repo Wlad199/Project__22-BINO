@@ -54,6 +54,9 @@
 			}
 		}
 	}
+	&__decor {
+		@include adaptiveValue("margin-top", 50, 20);
+	}
 }
 
 .content-agency {
@@ -109,3 +112,69 @@
 	}
 }
 
+// clients ====================================================================================================//
+
+.clients {
+	@include adaptiveValue("padding-top", 80, 40);
+
+	&__container {
+	}
+
+	&__content {
+		display: flex;
+		align-items: center;
+		//flex-wrap: wrap;
+	}
+
+	&__text {
+		flex: 0 1 300px;
+		font-weight: 600;
+		line-height: 160%;
+		@include adaptiveValue("font-size", 16, 14);
+		span {
+			display: block;
+			max-width: 190px;
+			padding-right: 30px;
+			@media (max-width: 590px) {
+				padding-right: 20px;
+			}
+		}
+		position: relative;
+		&::after{
+			content: '';
+			position: absolute;
+			top: -50%;
+			right: 20%;
+			width: 1px;
+			height: 200%;
+			background-color: #000;
+			@media (max-width: 590px) {
+				right: 10%;
+				height: 150%;
+				top: -25%;
+			}
+		}
+		@media (max-width: 1000px) {
+			flex: 0 1 400px;
+		}
+	}
+
+	&__partners {
+		flex: 1 1 auto;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin-right: -15px;
+		img {
+			padding: 0px 15px 25px 0px;
+			@media (max-width: 600px) {
+				padding: 0px 15px 15px 0px;
+				width: 40%;
+			}
+		}
+	}
+
+	&__decor {
+		@include adaptiveValue("margin-top", 80, 40);
+	}
+}
