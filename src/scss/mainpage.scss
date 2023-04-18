@@ -344,10 +344,17 @@
 
 	&__body {
 		display: flex;
+		@media (max-width: 767px) {
+			flex-wrap: wrap;
+		}
 	}
 
 	&__description {
 		flex: 0 1 35%;
+		@media (max-width: 767px) {
+			flex: 0 1 100%;
+			@include adaptiveValue("padding-bottom", 80, 40, 767, 320, 1);
+		}
 	}
 
 	&__watching {
@@ -355,6 +362,13 @@
 		display: flex;
 		flex-direction: column;
 		align-items: flex-end;
+		@media (max-width: 767px) {
+			flex: 0 1 100%;
+			align-items: center;
+		}
+	}
+	&__decor {
+		@include adaptiveValue("margin-top", 80, 30);
 	}
 }
 
@@ -392,18 +406,20 @@
 
 	&__row {
 		@include adaptiveValue("padding-bottom", 40, 20);
-		cursor: pointer;
-		&:hover {
-			.watching-project__link {
-				transition: all 0.5s ease 0s;
-				//display: flex;
-				margin-top: -1px;
-			}
-			.watching-project__text {
-				display: block;
-			}
-			.watching-project-button {
-				display: flex;
+		@media (min-width: 767px) {
+			cursor: pointer;
+			&:hover {
+				.watching-project__link {
+					transition: all 0.5s ease 0s;
+					//display: flex;
+					margin-top: -1px;
+				}
+				.watching-project__text {
+					display: block;
+				}
+				.watching-project-button {
+					display: flex;
+				}
 			}
 		}
 	}
@@ -425,8 +441,9 @@
 		height: 90px;
 		border-radius: 0px 0px 15px 15px;
 		margin-top: -1px;
-		//display: none;
-		margin-top: -100px;
+		@media (min-width: 767px) {
+			margin-top: -100px;
+		}
 	}
 
 	&__text {
@@ -437,7 +454,9 @@
 		display: flex;
 		align-items: center;
 		padding-left: 18px;
-		display: none;
+		@media (min-width: 767px) {
+			display: none;
+		}
 	}
 
 	&__button {
@@ -475,5 +494,7 @@
 			color: #000;
 		}
 	}
-	display: none;
+	@media (min-width: 767px) {
+		display: none;
+	}
 }
