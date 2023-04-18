@@ -184,11 +184,14 @@
 	@include adaptiveValue("padding-top", 80, 40);
 
 	&__container {
+	}
+
+	&__body {
 		display: flex;
 		@media (max-width: 992px) {
 			flex-wrap: wrap;
-			
 		}
+		@include adaptiveValue("margin-bottom", 80, 40);
 	}
 
 	&__descriptions {
@@ -244,6 +247,28 @@
 	@media (max-width: 992px) {
 		@include adaptiveValue("gap", 100, 35, 992, 767, 1);
 	}
+	position: relative;
+	@media (min-width: 767px) {
+		&::before{
+			position: absolute;
+			content: '';
+			top: 0;
+			right: 50%;
+			height: 40%;
+			width: 1px;
+			background-color: #000;
+		}
+		&::after{
+			position: absolute;
+			content: '';
+			bottom: 0;
+			right: 50%;
+			height: 40%;
+			width: 1px;
+			background-color: #000;
+		}
+	}
+
 
 	&__column {
 		flex: 0 1 50%;
@@ -257,12 +282,35 @@
 		min-width: 280px;
 		&:not(:last-child){
 			padding: 0px 0px 85px 0px;
-			@include adaptiveValue("padding-bottom", 85, 25);
-			@include adaptiveValue("padding-bottom", 40, 25, 767, 320, 1);
+			//@include adaptiveValue("padding-bottom", 85, 40, 1170, 767, 1);
+			@include adaptiveValue("padding-bottom", 40, 25, 767, 320, 3);
 		}
-		@media (max-width: 992px) {
-			
+		position: relative;
+		@media (min-width: 767px) {
+		&_1 {
+			&::after{
+				position: absolute;
+				content: '';
+				bottom: 44.5px;
+				left: 0;
+				height: 1px;
+				width: 70%;
+				background-color: #000;
+			}
 		}
+		&_3 {
+			&::after{
+				position: absolute;
+				content: '';
+				bottom: 44.5px;
+				right: 0;
+				height: 1px;
+				width: 70%;
+				background-color: #000;
+			}
+		}
+	}
+
 	}
 
 	&__icon {
