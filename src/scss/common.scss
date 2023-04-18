@@ -19,6 +19,14 @@
 	}
 }
 
+// decor ====================================================================================================//
+ 
+.decor {
+	width: 100%;
+	height: 1px;
+	background-color: #000;
+ }
+
 // button ====================================================================================================//
 
 .button {
@@ -73,6 +81,62 @@
 	}
 }
 
+// button-link ====================================================================================================//
+
+.button-link {
+	display: flex;
+
+	&__text {
+		font-weight: 600;
+		font-size: 13px;
+		line-height: 140%;
+		margin-right: 8px;
+		transition: all 0.3s ease 0s;
+		color: #2e2e2e;
+	}
+
+	&__icon {
+		transition: all 0.2s ease 0s;
+	}
+	&:hover{
+		.button-link__icon {
+			transform: rotate(45deg);
+		}
+		.button-link__text {
+			color: #000;
+		}
+	}
+}
+
+// title ====================================================================================================//
+
+.title {
+	font-weight: 600;
+	@include adaptiveValue("font-size", 40, 30);
+	line-height: 120%; /* 48/40 */
+}
+
+// title_l ====================================================================================================//
+
+.title_l {
+	font-weight: 500;
+	@include adaptiveValue("font-size", 30, 20);
+	line-height: 140%;
+	text-transform: uppercase;
+}
+
+// label ====================================================================================================//
+
+.label {
+	font-family: $jac;
+	text-transform: uppercase;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 128.571429%; /* 18/14 */
+	letter-spacing: 0.2em;
+	color: #333333;
+}
+
 // text ====================================================================================================//
 
 .text {
@@ -81,11 +145,3 @@
 	line-height: 140%;
 	color: #333333;
 }
-
-// decor ====================================================================================================//
- 
-.decor {
-	width: 100%;
-	height: 1px;
-	background-color: #000;
- }
