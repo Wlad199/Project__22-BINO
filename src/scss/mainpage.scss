@@ -824,3 +824,29 @@
 		@include adaptiveValue("padding-bottom", 30, 20);
 	}
 }
+
+// get-in-touch ====================================================================================================//
+
+.get-in-touch {
+	@include adaptiveValue("padding-top", 40, 20);
+
+	&__container {
+	}
+
+	&__body {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@include adaptiveValue("gap", 50, 10);
+	}
+
+	&__decor {
+		@include adaptiveValue("margin-top", 40, 20);
+	}
+
+	&__image {
+		img {
+			max-width: 100%;
+		}
+	}
+}
