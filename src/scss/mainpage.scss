@@ -17,6 +17,7 @@
 	&__image {
 		img {
 			max-width: 100%;
+			border-radius: 10px;
 		}
 	}
 	&__decore {
@@ -95,6 +96,7 @@
 		flex: 0 1 50%;
 		img {
 			max-width: 100%;
+			border-radius: 10px;
 		}
 		@media (max-width: 767px) {
 			flex: 0 1 90%;
@@ -512,6 +514,18 @@
 		display: flex;
 		gap: 125px;
 		@include adaptiveValue("gap", 125, 20);
+		position: relative;
+		@media (min-width: 767px) {
+			&:after {
+				position: absolute;
+				content: '';
+				top: 0;
+				right: 50%;
+				height: 90%;
+				width: 1px;
+				background-color: #000;
+			}
+		}
 		@media (max-width: 767px) {
 		flex-wrap: wrap;
 		}
@@ -566,5 +580,171 @@
 	}
 
 	&__button {
+	}
+}
+
+// advantages ====================================================================================================//
+
+.advantages {
+	@include adaptiveValue("padding-top", 80, 40);
+
+	&__container {
+	}
+
+	&__body {
+		display: flex;
+		align-items: center;
+		@include adaptiveValue("gap", 70, 20);
+		position: relative;
+		@media (max-width: 992px) {
+			flex-wrap: wrap;
+		}
+		@media (min-width: 992px) {
+			&::after{
+				position: absolute;
+				content: '';
+				top: 0;
+				right: 50%;
+				height: 100%;
+				width: 1px;
+				background-color: #000;
+			}
+		}
+	}
+
+	&__image {
+		flex: 0 1 50%;
+		@media (max-width: 992px) {
+			flex: 0 1 100%;
+			display: flex;
+			justify-content: flex-end;
+			order: 2;
+		}
+		img {
+			max-width: 100%;
+			border-radius: 10px;
+		}
+	}
+
+	&__content {
+		flex: 0 1 50%;
+		@media (max-width: 992px) {
+			flex: 0 1 100%;
+		}
+	}
+
+	&__decor {
+		@include adaptiveValue("margin-top", 80, 30);
+	}
+}
+.content-advantages {
+
+	&__item {
+	}
+}
+.content-advantages-item {
+	display: flex;
+	@include adaptiveValue("gap", 30, 10);
+	&:not(:last-child){
+		@include adaptiveValue("padding-bottom", 25, 17.5);
+	}
+
+	&__number {
+		@media (max-width: 450px) {
+			img {
+				max-width: 60px;
+			}
+		}
+	}
+
+	&__info {
+	}
+
+	&__title {
+		@include adaptiveValue("padding-bottom", 18, 10);
+	}
+
+	&__text {
+	}
+
+	&__decor {
+		@include adaptiveValue("margin-top", 25, 17.5);
+	}
+}
+
+// comment ====================================================================================================//
+
+.comment {
+	@include adaptiveValue("padding-top", 80, 40);
+
+	&__container {
+	}
+
+	&__body {
+	}
+
+	&__label {
+		text-align: center;
+		@include adaptiveValue("padding-bottom", 50, 30);
+	}
+
+	&__content {
+	}
+
+	&__decor {
+		@include adaptiveValue("margin-top", 80, 40);
+	}
+}
+
+.content-comment {
+	display: flex;
+	@include adaptiveValue("gap", 70, 10);
+	@media (max-width: 580px) {
+		align-items: center;
+	}
+
+	&__icon {
+		flex: 0 1 10%;
+		@media (max-width: 580px) {
+			img {
+				max-width: 70px;
+			}
+		}
+		@media (max-width: 4500px) {
+			img {
+				max-width: 50px;
+			}
+		}
+	}
+
+	&__quote {
+		flex: 0 1 80%;
+	}
+}
+
+.content-comment-quote {
+	text-align: center;
+	background: url('@img/comment/quote.svg') center center no-repeat;
+
+	&__text {
+		font-weight: 500;
+		@include adaptiveValue("font-size", 25, 14);
+		line-height: 140%;
+		@include adaptiveValue("padding-bottom", 50, 30);
+	}
+
+	&__person {
+		font-weight: 600;
+		@include adaptiveValue("font-size", 24, 16);
+		line-height: 120.833333%; /* 29/24 */
+		padding-bottom: 8px;
+	}
+
+	&__profession {
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 128.571429%; /* 18/14 */
+		letter-spacing: 0.25em;
+		color: #666666;
 	}
 }
