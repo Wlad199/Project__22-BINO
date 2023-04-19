@@ -439,6 +439,7 @@
 		align-items: center;
 		background-color: #000;
 		height: 90px;
+		@include adaptiveValue("height", 90, 50);
 		border-radius: 0px 0px 15px 15px;
 		margin-top: -1px;
 		@media (min-width: 767px) {
@@ -496,5 +497,74 @@
 	}
 	@media (min-width: 767px) {
 		display: none;
+	}
+}
+
+// strategy ====================================================================================================//
+
+.strategy {
+	@include adaptiveValue("padding-top", 80, 40);
+
+	&__container {
+	}
+
+	&__body {
+		display: flex;
+		gap: 125px;
+		@include adaptiveValue("gap", 125, 20);
+		@media (max-width: 767px) {
+		flex-wrap: wrap;
+		}
+	}
+
+	&__quote {
+		flex: 0 1 50%;
+		@media (max-width: 767px) {
+			flex: 0 1 100%;
+			order: 2;
+		}
+	}
+
+	&__content {
+		flex: 0 1 50%;
+		@media (max-width: 767px) {
+			flex: 0 1 100%;
+			order: 1;
+		}
+	}
+
+	&__decor {
+		@include adaptiveValue("margin-top", 80, 30);
+	}
+}
+
+.quote-strategy {
+
+	&__text {
+		font-family: $jac;
+		font-style: italic;
+		font-weight: 500;
+		line-height: 140%;
+		color: #333333;
+		@include adaptiveValue("padding-left", 40, 30, 1170, 767, 2);
+		p {
+			&:not(:last-child){
+				@include adaptiveValue("padding-bottom", 18, 14);
+			}
+		}
+	}
+}
+
+.content-strategy {
+
+	&__label {
+		padding: 0px 0px 10px 0px;
+	}
+
+	&__title {
+		@include adaptiveValue("margin-bottom", 30, 20);
+	}
+
+	&__button {
 	}
 }
