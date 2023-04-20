@@ -1,5 +1,4 @@
 footer {
-	padding: 0px 0px 200px 0px;
 }
 
 .footer {
@@ -9,6 +8,9 @@ footer {
 	}
 
 	&__top {
+	}
+	
+	&__bottom {
 	}
 }
 .footer-top {
@@ -168,11 +170,84 @@ footer {
 .list-footer-top {
 
 	&__link {
+		transition: all 0.3s ease 0s;
+		position: relative;
+		&:hover{
+			color: #000;
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			left: 50%;
+			width: 0;
+			height: 1px;
+			background-color: #000;
+			bottom: -3px;
+			transition: all 0.3s ease 0s;
+		 }
+		 &:hover::after {
+			left: 0;
+			width: 100%;
+		 }
 	}
 }
-.form {
+
+//  ====================================================================================================//
+
+.bottom-footer {
+	@include adaptiveValue("padding-top", 60, 30);
+	@include adaptiveValue("padding-bottom", 60, 30);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	@media (max-width: 400px) {
+		flex-wrap: wrap;
+	}
+
+	&__social {
+		display: flex;
+		@include adaptiveValue("gap", 15, 10);
+		@media (max-width: 400px) {
+			flex: 0 1 100%;
+			display: flex;
+			justify-content: center;
+			margin-bottom: 20px;
+		}
+	}
+
+	&__item {
+	}
+
+	&__policy {
+		display: flex;
+		font-family: $jac;
+		color: #444444;
+		@media (max-width: 400px) {
+			flex: 0 1 100%;
+			display: flex;
+			justify-content: center;
+		}
+
+		p:not(:last-child){
+			@include adaptiveValue("padding-right", 40, 15);
+			position: relative;
+			&::after {
+				position: absolute;
+				content: '';
+				top: 0;
+				@include adaptiveValue("right", 20, 7.5);
+				width: 1px;
+				height: 100%;
+				background-color: #000;
+			}
+		}
+	}
 }
-.input {
-}
-.button-link {
+.icon {
+
+	&__inside {
+	}
+
+	&__body {
+	}
 }
