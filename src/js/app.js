@@ -39,7 +39,7 @@ import * as flsFunctions from "./files/functions.js";
 //===================//
 
 // Плавная навигация по странице
-// flsScroll.pageNavigation();
+ flsScroll.pageNavigation();
 //===================//
 
 
