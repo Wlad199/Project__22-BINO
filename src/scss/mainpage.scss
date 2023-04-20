@@ -838,6 +838,13 @@
 		align-items: center;
 		justify-content: center;
 		@include adaptiveValue("gap", 50, 10);
+		transition: all 0.3s ease 0s;
+		&:hover {
+			transform: scale(1.005);
+			.get-in-touch__image_m{
+				transform: rotate(90deg)
+			}
+		}
 	}
 
 	&__decor {
@@ -845,6 +852,7 @@
 	}
 
 	&__image {
+		transition: all 0.3s ease 0s;
 		img {
 			max-width: 100%;
 		}
