@@ -4,3 +4,10 @@ import { isMobile } from "./functions.js";
 import { flsModules } from "./modules.js";
 
 
+
+
+$(document).ready(function () {
+	$('.comment__body').slick({
+		dots: true,
+	});
+})
